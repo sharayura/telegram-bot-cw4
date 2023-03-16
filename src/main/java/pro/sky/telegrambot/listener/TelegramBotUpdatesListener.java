@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pro.sky.telegrambot.service.NotificationTaskService;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
@@ -30,6 +31,9 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
     @Autowired
     private TelegramBot telegramBot;
 
+    @Autowired
+    private NotificationTaskService notificationTaskService;
+
     @PostConstruct
     public void init() {
         telegramBot.setUpdatesListener(this);
@@ -48,14 +52,14 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
                 } else if (text != null) {
                     Matcher matcher = NOTIFICATION_PATTERN.matcher(text);
                     LocalDateTime dateTime;
+                    Long chatId = update.message().chat().id();
                     if (matcher.matches() && (dateTime = parse(matcher.group(1))) != null) {
                         String textMessage = matcher.group(3);
-                        //////////
-                        telegramBot.execute(new SendMessage(update.message().chat().id(), "Задача принята!"));
-                    }
-
+                        notificationTaskService.addNotificationTask(dateTime,textMessage,chatId);
+                        telegramBot.execute(new SendMessage(chatId,"Задача принята!"));
+                    }else telegramBot.execute(new SendMessage(chatId,
+                            "Неверный формат даты или времени, пример: 18.01.2023 16:30 Важнейшее совещание"));
                 }
-
             });
         } catch (Exception e){
             e.printStackTrace();
