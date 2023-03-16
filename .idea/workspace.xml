@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc328473-78e5-4988-bcc3-124f410b23b4" name="Changes" comment="cw4 first">
+    <list default="true" id="bc328473-78e5-4988-bcc3-124f410b23b4" name="Changes" comment="cw4 2.4">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pro/sky/telegrambot/timer/NotificationTaskTimer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pro/sky/telegrambot/listener/TelegramBotUpdatesListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/sky/telegrambot/listener/TelegramBotUpdatesListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pro/sky/telegrambot/service/NotificationTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/sky/telegrambot/service/NotificationTaskService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +98,7 @@
       <updated>1678539448553</updated>
       <workItem from="1678539450363" duration="2536000" />
       <workItem from="1678542063910" duration="1170000" />
-      <workItem from="1678729578742" duration="17761000" />
+      <workItem from="1678729578742" duration="20365000" />
     </task>
     <task id="LOCAL-00001" summary="cw4 first">
       <created>1678912315761</created>
@@ -107,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678912315761</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="cw4 2.4">
+      <created>1678983036477</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678983036477</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +122,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cw4 first" />
-    <option name="LAST_COMMIT_MESSAGE" value="cw4 first" />
+    <MESSAGE value="cw4 2.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="cw4 2.4" />
   </component>
 </project>

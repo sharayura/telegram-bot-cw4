@@ -6,6 +6,8 @@ import pro.sky.telegrambot.entity.NotificationTask;
 import pro.sky.telegrambot.repositories.NotificationTaskRepository;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 @Service
 public class NotificationTaskService {
@@ -23,6 +25,10 @@ public class NotificationTaskService {
         notificationTask.setMessage(message);
         notificationTask.setChatId(chatId);
         notificationTaskRepository.save(notificationTask);
+    }
+
+    public List<NotificationTask> findNotificationNow() {
+        return notificationTaskRepository.findNotificationTaskByNotificationDateTime(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
     }
 
 }
